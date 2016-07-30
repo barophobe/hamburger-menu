@@ -47,11 +47,11 @@ body {
 
 
 /* ============================================================
-  Hamburger-Menu  for screens > 901px wide
+  Hamburger-Menu  for screens > 1101px wide
 ============================================================ */
 
 
-@media screen and (min-width: 901px) {
+@media screen and (min-width: 1101px) {
 
 .c-hamburger {
   display: block;
@@ -152,9 +152,9 @@ body {
     color: #f1f1f1;
 }
 /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-@media screen and (max-height: 450px) {
-    .layover a {font-size: 20px}
-}
+// @media screen and (max-height: 450px) {
+//     .layover a {font-size: 20px}
+// }
 
 .navLst {
 list-style:none;
@@ -297,7 +297,7 @@ h5 {
 
 }
 /* ============================================================
- End of Hamburger-Menu  for screens > 901px wide
+ End of Hamburger-Menu  for screens > 1101px wide
 ============================================================ */
 
 
@@ -334,9 +334,9 @@ h5 {
 
 
 /* ============================================================
-  Hamburger-Menu  for screens 900px to 600px wide
+  Hamburger-Menu  for screens 1100px to 600px wide
 ============================================================ */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1100px) {
 .c-hamburger {
   display: block;
   position: absolute;
@@ -430,10 +430,10 @@ h5 {
     color: #f1f1f1;
 }
 
-@media screen and (max-height: 450px) {
-    .layover a {font-size: 20px}
+// @media screen and (max-height: 450px) {
+//     .layover a {font-size: 20px}
    
-}
+// }
 .navLst {
 list-style:none;
 padding: 0;
