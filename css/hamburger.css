@@ -24,147 +24,462 @@ body {
   /* Opera 11.10+ */
   background: -o-radial-gradient(rgba(45, 45, 45, 0.6), rgba(45, 45, 45, 0.9) 80%); }
 
-.c-hamburger {
-  display: block;
-  position: absolute;
-  overflow: hidden;
-  z-index: 3;
-  margin: 0;
-  padding: 0;
-  width: 56px;
-  height: 56px;
-  right: 0;
-  top: 0;
-  font-size: 0;
-  text-indent: -9999px;
-  appearance: none;
-  box-shadow: none;
-  border-radius: none;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s; }
+/* ============================================================
+  Hamburger-Menu  for screens > 901px wide
+============================================================ */
+@media screen and (min-width: 901px) {
+  .c-hamburger {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    z-index: 3;
+    margin: 0;
+    padding: 0;
+    width: 72px;
+    height: 72px;
+    right: 0;
+    top: 0;
+    font-size: 0;
+    text-indent: -9999px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s; }
 
-.c-hamburger:focus {
-  outline: none; }
+  .c-hamburger:focus {
+    outline: none; }
 
-.c-hamburger span {
-  display: block;
-  position: absolute;
-  top: 22px;
-  left: 9px;
-  right: 9px;
-  height: 4px;
-  background: #f2c01b; }
+  .c-hamburger span {
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 12px;
+    right: 12px;
+    height: 6px;
+    background: #f2c01b; }
 
-.c-hamburger span::before,
-.c-hamburger span::after {
-  position: absolute;
-  display: block;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: #f2c01b;
-  content: ""; }
+  .c-hamburger span::before,
+  .c-hamburger span::after {
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: #f2c01b;
+    content: ""; }
 
-.c-hamburger span::before {
-  top: -14px; }
+  .c-hamburger span::before {
+    top: -20px; }
 
-.c-hamburger span::after {
-  bottom: -14px; }
+  .c-hamburger span::after {
+    bottom: -20px; }
 
-.c-hamburger--rot {
-  background-color: rgba(45, 45, 45, 0.9); }
+  .c-hamburger--rot {
+    background-color: rgba(45, 45, 45, 0.9); }
 
-.c-hamburger--rot span {
-  transition: transform 0.3s; }
+  .c-hamburger--rot span {
+    transition: transform 0.3s; }
 
-/* active state, i.e. menu open */
-.c-hamburger--rot.is-active {
-  background-color: #127cc0; }
+  .c-hamburger--rot.is-active {
+    background-color: #127cc0; }
 
-.c-hamburger--rot.is-active span {
-  transform: rotate(90deg); }
+  .c-hamburger--rot.is-active span {
+    transform: rotate(90deg); }
 
-/* The Overlay (background) */
-.layover {
-  /* Height & width depends on how you want to reveal the overlay (see JS below) */
-  display: none;
-  position: absolute;
-  /* Stay in place */
-  z-index: 3;
-  /* Sit on top */
-  right: 0;
-  bottom: 0;
-  padding: 4px 4px 3px 4px;
-  background-color: black;
-  /* Black fallback color */
-  background-color: rgba(0, 0, 0, 0.9);
-  /* Black w/opacity */
-  overflow: hidden;
-  /* Disable horizontal scroll */
-  /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */ }
+  /* The Overlay (background) */
+  .layover {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    bottom: 0;
+    padding: 4px 4px 3px 4px;
+    border: 2px solid rgba(45, 45, 45, 0.6);
+    border-radius: 1px;
+    background-color: black;
+    /* Black fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/opacity */
+    overflow: hidden; }
 
-/* Position the content inside the overlay */
-.layover-content {
-  position: relative;
-  top: 10%;
-  /* 25% from the top */
-  width: 100%;
-  /* 100% width */
-  text-transform: uppercase;
-  font-weight: bold; }
+  .layover-content {
+    position: relative;
+    top: 10%;
+    /* 25% from the top */
+    width: 100%;
+    /* 100% width */
+    text-transform: uppercase;
+    font-weight: bold; }
 
-/* The navigation links inside the overlay */
-.layover a {
-  text-decoration: none;
-  /* Transition effects on hover (color) */ }
+  .layover a {
+    text-decoration: none; }
 
-/* When you mouse over the navigation links, change their color */
-.layover a:hover, .layover a:focus {
-  color: #f1f1f1; }
+  .layover a:hover, .layover a:focus {
+    color: #f1f1f1; }
 
-/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-@media screen and (max-height: 450px) {
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */ }
+@media screen and (min-width: 901px) and (max-height: 450px) {
   .layover a {
     font-size: 20px; } }
-.navLst {
-  list-style: none;
-  padding: 0;
-  width: 292px;
-  margin-bottom: 0px;
-  margin-top: 0px; }
-  .navLst li {
-    background-color: rgba(192, 192, 192, 0.3);
-    border-bottom: 1px dashed Black;
-    margin-bottom: 1px;
-    padding: 0; }
-  .navLst h5 {
-    display: inline-block; }
+@media screen and (min-width: 901px) {
+  .navLst {
+    list-style: none;
+    padding: 0;
+    width: 370px;
+    margin-bottom: 0px;
+    margin-top: 0px; }
+    .navLst li {
+      background-color: rgba(192, 192, 192, 0.3);
+      border-bottom: 1px solid rgba(45, 45, 45, 0.6);
+      border-top: 1px solid rgba(45, 45, 45, 0.6);
+      margin-bottom: 1px;
+      padding: 0; }
+    .navLst h5 {
+      display: inline-block; }
 
-.overHead {
-  text-transform: uppercase;
-  color: #f2c01b;
-  line-height: 1.7;
-  border-left: 7px solid #f2c01b;
-  margin: 15% 0 8% 0;
-  padding: 2% 0 2% 4%;
-  font-weight: bold; }
+  .overHead {
+    text-transform: uppercase;
+    color: #f2c01b;
+    line-height: 1.7;
+    border-left: 7px solid #f2c01b;
+    margin: 15% 0 8% 0;
+    padding: 2% 0 2% 4%;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(45, 45, 45, 0.6); }
 
-.overHeadSpan {
-  text-transform: uppercase;
-  color: #f2c01b;
-  line-height: 2;
-  margin: 0 3px 0 0;
-  font-weight: bold;
-  vertical-align: bottom; }
+  .overHeadSpan {
+    text-transform: uppercase;
+    color: #f2c01b;
+    line-height: 2;
+    margin: 0 3px 0 0;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(45, 45, 45, 0.6);
+    vertical-align: bottom; }
 
-.transCon {
-  position: fixed;
-  width: 300px;
-  height: 225px;
-  background-color: #f2c01b;
-  float: right;
-  top: 5%;
-  right: 5%; }
+  .transCon {
+    position: fixed;
+    width: 382px;
+    height: 244px;
+    background-color: transparent;
+    float: right;
+    top: 5%;
+    right: 5%;
+    overflow: hidden; }
+
+  .specHd {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 72px;
+    width: 300px;
+    border-bottom: 2px solid #127cc0;
+    background-color: rgba(45, 45, 45, 0.9);
+    -moz-animation-name: slideDiv;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: ease-out;
+    -moz-animation-duration: 0.3s;
+    -webkit-animation-name: slideDiv;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-duration: 0.3s;
+    animation-name: slideDiv;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: 0.3s; }
+
+  @-moz-keyframes slideDiv {
+    0% {
+      -moz-transform: translateX(-200px); }
+    100% {
+      -moz-transform: translateX(0); } }
+  @-webkit-keyframes slideDiv {
+    0% {
+      -webkit-transform: translateX(-200px); }
+    100% {
+      -webkit-transform: translateX(0); } }
+  @keyframes slideDiv {
+    0% {
+      transform: translateX(-200px); }
+    100% {
+      transform: translateX(0); } }
+  .noSpecHd {
+    display: none; }
+
+  .titleMenu {
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: .8;
+    font-weight: bold;
+    -webkit-animation: fadein 2s;
+    /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s;
+    /* Firefox < 16 */
+    -ms-animation: fadein 2s;
+    /* Internet Explorer */
+    -o-animation: fadein 2s;
+    /* Opera < 12.1 */
+    animation: fadein 2s; }
+
+  @keyframes fadein {
+    from {
+      opacity: 0; }
+    to {
+      opacity: 1; } }
+  /* Firefox < 16 */
+  @-moz-keyframes fadein {
+    from {
+      opacity: 0; }
+    to {
+      opacity: 1; } }
+  /* Safari, Chrome and Opera > 12.1 */
+  @-webkit-keyframes fadein {
+    from {
+      opacity: 0; }
+    to {
+      opacity: 1; } }
+  /* Internet Explorer */
+  @-ms-keyframes fadein {
+    from {
+      opacity: 0; }
+    to {
+      opacity: 1; } }
+  /* Opera < 12.1 */
+  @-o-keyframes fadein {
+    from {
+      opacity: 0; }
+    to {
+      opacity: 1; } } }
+/* ============================================================
+ End of Hamburger-Menu  for screens > 901px wide
+============================================================ */
+/* ============================================================
+  Hamburger-Menu  for screens 900px to 600px wide
+============================================================ */
+@media screen and (max-width: 900px) {
+  .c-hamburger {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    z-index: 3;
+    margin: 0;
+    padding: 0;
+    width: 56px;
+    height: 56px;
+    right: 0;
+    top: 0;
+    font-size: 0;
+    text-indent: -9999px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s; }
+
+  .c-hamburger:focus {
+    outline: none; }
+
+  .c-hamburger span {
+    display: block;
+    position: absolute;
+    top: 25px;
+    left: 9px;
+    right: 9px;
+    height: 4px;
+    background: #f2c01b; }
+
+  .c-hamburger span::before,
+  .c-hamburger span::after {
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #f2c01b;
+    content: ""; }
+
+  .c-hamburger span::before {
+    top: -14px; }
+
+  .c-hamburger span::after {
+    bottom: -14px; }
+
+  .c-hamburger--rot {
+    background-color: rgba(45, 45, 45, 0.9); }
+
+  .c-hamburger--rot span {
+    transition: transform 0.3s; }
+
+  /* active state, i.e. menu open */
+  .c-hamburger--rot.is-active {
+    background-color: #127cc0; }
+
+  .c-hamburger--rot.is-active span {
+    transform: rotate(90deg); }
+
+  /* The Overlay (background) */
+  .layover {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    bottom: 0;
+    padding: 2px 2px 1px 2px;
+    border: 2px solid rgba(45, 45, 45, 0.6);
+    border-radius: 1px;
+    background-color: black;
+    /* Black fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/opacity */
+    overflow: hidden; }
+
+  /* Position the content inside the overlay */
+  .layover-content {
+    position: relative;
+    top: 10%;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold; }
+
+  .layover a {
+    text-decoration: none; }
+
+  .layover a:hover, .layover a:focus {
+    color: #f1f1f1; } }
+@media screen and (max-width: 900px) and (max-height: 450px) {
+  .layover a {
+    font-size: 20px; } }
+@media screen and (max-width: 900px) {
+  .navLst {
+    list-style: none;
+    padding: 0;
+    width: 292px;
+    margin-bottom: 0px;
+    margin-top: 0px; }
+    .navLst li {
+      background-color: rgba(192, 192, 192, 0.3);
+      border-bottom: 1px solid rgba(45, 45, 45, 0.6);
+      border-top: 1px solid rgba(45, 45, 45, 0.6);
+      margin-bottom: 1px;
+      padding: 0; }
+    .navLst h5 {
+      display: inline-block; }
+
+  .overHead {
+    text-transform: uppercase;
+    color: #f2c01b;
+    line-height: 1.7;
+    border-left: 7px solid #f2c01b;
+    margin: 15% 0 8% 0;
+    padding: 2% 0 2% 4%;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(45, 45, 45, 0.6); }
+
+  .overHeadSpan {
+    text-transform: uppercase;
+    color: #f2c01b;
+    line-height: 2;
+    margin: 0 3px 0 0;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(45, 45, 45, 0.6);
+    vertical-align: bottom; }
+
+  .transCon {
+    position: fixed;
+    width: 300px;
+    height: 221px;
+    background-color: transparent;
+    float: right;
+    top: 5%;
+    right: 5%;
+    overflow: hidden; }
+
+  .specHd {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 56px;
+    width: 234px;
+    border-bottom: 2px solid #127cc0;
+    background-color: rgba(45, 45, 45, 0.9);
+    -moz-animation-name: slideDiv;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: ease-out;
+    -moz-animation-duration: 0.3s;
+    -webkit-animation-name: slideDiv;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-duration: 0.3s;
+    animation-name: slideDiv;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: 0.3s; }
+
+  @-moz-keyframes slideDiv {
+    0% {
+      -moz-transform: translateX(-200px); }
+    100% {
+      -moz-transform: translateX(0); } }
+  @-webkit-keyframes slideDiv {
+    0% {
+      -webkit-transform: translateX(-200px); }
+    100% {
+      -webkit-transform: translateX(0); } }
+  @keyframes slideDiv {
+    0% {
+      transform: translateX(-200px); }
+    100% {
+      transform: translateX(0); } }
+  .noSpecHd {
+    display: none; }
+
+  .titleMenu {
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: .5;
+    font-weight: bold;
+    -webkit-animation: fadein 2s;
+    /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s;
+    /* Firefox < 16 */
+    -ms-animation: fadein 2s;
+    /* Internet Explorer */
+    -o-animation: fadein 2s;
+    /* Opera < 12.1 */
+    animation: fadein 2s; }
+
+  @keyframes fadein {
+    from {
+      opacity: 0; }
+    to {
+      opacity: 1; } }
+  /* Firefox < 16 */
+  @-moz-keyframes fadein {
+    from {
+      opacity: 0; }
+    to {
+      opacity: 1; } }
+  /* Safari, Chrome and Opera > 12.1 */
+  @-webkit-keyframes fadein {
+    from {
+      opacity: 0; }
+    to {
+      opacity: 1; } }
+  /* Internet Explorer */
+  @-ms-keyframes fadein {
+    from {
+      opacity: 0; }
+    to {
+      opacity: 1; } }
+  /* Opera < 12.1 */
+  @-o-keyframes fadein {
+    from {
+      opacity: 0; }
+    to {
+      opacity: 1; } } }
 
 /*# sourceMappingURL=hamburger.css.map */

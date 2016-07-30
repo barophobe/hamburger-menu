@@ -19,6 +19,17 @@ $(function(){
     $('html,body').scrollTo(this.hash,this.hash); 
   });
 });
+var headerHeight = 50;
+
+$(window).bind('scroll', function () {
+if ($(window).scrollTop() > headerHeight) {
+    $('#hed').removeClass('specHd');
+    $('#hed').addClass('noSpecHd');
+} else {
+    $('#hed').removeClass('noSpecHd');
+    $('#hed').addClass('specHd');
+}
+});  
 
 
 (function() {
