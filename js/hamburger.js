@@ -1,54 +1,42 @@
-/* Open when someone clicks on the span element */
-// function openNav() {
-  
-// }
 
-//  Close when someone clicks on the "x" symbol inside the overlay 
-// function closeNav() {
-//     document.getElementById("myNav").style.width = "0%";
-// }
-
-// $(function(){
-// 	var $btnOps = $("#ops");
-// 	var $dim = $("#myNav");
-//     // $dim.style.width = "20%";
-//     // $dim.style.height = "20%";
-//     $btnOps.click(function(){  
-    
-//         $dim.toggle();
-//     });
-// });
 $(document).ready(function(){
 $("button").click(function(){
-    $(".overlay").toggle();
+    $(".layover").toggle();
 });
+
+
+ $('ul.layover-content').each(function(){
+    
+    $parent = $(this).parent();
+    
+    $parent.width( $(this).width() );
+    
+  });
+});
+$(function(){
+  $(".layover-content a").click(function(e){
+    e.preventDefault();
+    $('html,body').scrollTo(this.hash,this.hash); 
+  });
 });
 
 
- // var $hamburger = $(".hamburger");
- //  $hamburger.on("click", function(e) {
- //    $hamburger.toggleClass("is-active");
- //    // Do something else, like open/close menu
- //    $(".overlay").toggle();
- //  });
+(function() {
 
+"use strict";
 
-    (function() {
+var toggles = document.querySelectorAll(".c-hamburger");
 
-    "use strict";
+for (var i = toggles.length - 1; i >= 0; i--) {
+  var toggle = toggles[i];
+  toggleHandler(toggle);
+};
 
-    var toggles = document.querySelectorAll(".hamburger");
+function toggleHandler(toggle) {
+  toggle.addEventListener( "click", function(e) {
+    e.preventDefault();
+    (this.classList.contains("is-active") === false) ? this.classList.add("is-active") : this.classList.remove("is-active");
+  });
+}
 
-    for (var i = toggles.length - 1; i >= 0; i--) {
-      var toggle = toggles[i];
-      toggleHandler(toggle);
-    };
-
-    function toggleHandler(toggle) {
-      toggle.addEventListener( "click", function(e) {
-        e.preventDefault();
-        (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
-      });
-    }
-
-  })();
+})();

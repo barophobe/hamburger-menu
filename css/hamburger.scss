@@ -1,71 +1,228 @@
-@import "C:/xampp/htdocs/Git projects/Hamburger/css/hamburgers.scss";
 
-/* The Overlay (background) */
+$pink: #ffaaaa;
+$pinkT:  rgba(255,170,170, 0.2);
+$blueB: #6dadd5;
+$blueD: #127cc0;
+$yellow:#f2c01b;
+$white:#ffffff;
+$overlay: rgba(45,45,45,0.9);
+$overlayHd: rgba(45,45,45,0.6);
+$overlayT: rgba(45,45,45,0);
+$greyL:#c0c0c0;
+$greyLT: rgba(192,192,192,0.3);
+$greyD:#959595;
 
-.overlay {
-    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
-    height: 20%;
-    width: 20%;
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 2%;
-    top: 20%;
-    background-color: rgb(0,0,0); /* Black fallback color */
-    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
-    overflow: hidden; /* Disable horizontal scroll */
-     /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+
+body {
+  height:3000px;
 }
 
-/* Position the content inside the overlay */
-.overlay-content {
-    position: relative;
-    top: 25%; /* 25% from the top */
-    width: 100%; /* 100% width */
-    text-align: center; /* Centered text/links */
-    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+.subHd {
+  display:inline-block;
+  color:$blueB;
+  text-shadow: 2px 2px 2px $overlayHd;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 2px solid $blueD;
+  padding:1% 10% 1% 10%;
+  margin-bottom:2%;
+  box-shadow: 5px 5px 5px #888888;
+}
+.subTrans{
+
+  /* Safari 4-5, Chrome 1-9 */
+  background: -webkit-gradient(radial, from($overlay, to($overlayHd)));
+
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-radial-gradient( $overlayHd,$overlay  80%);
+
+  /* Firefox 3.6+ */
+  background: -moz-radial-gradient( $overlayHd,$overlay 80%);
+
+  /* IE 10 */
+  background: -ms-radial-gradient( $overlayHd,$overlay  80%);
+
+  /* Opera 11.10+ */
+  background: -o-radial-gradient( $overlayHd,$overlay  80%);
+
+
 }
 
-/* The navigation links inside the overlay */
-.overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: #818181;
-    display: block; /* Display block instead of inline */
-     /* Transition effects on hover (color) */
-}
 
-/* When you mouse over the navigation links, change their color */
-.overlay a:hover, .overlay a:focus {
-    color: #f1f1f1;
-}
 
-/* Position the close button (top right corner) */
-.closebtn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px !important; /* Override the font-size specified earlier (36px) for all navigation links */
-}
 
-/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-@media screen and (max-height: 450px) {
-    .overlay a {font-size: 20px}
-    .closebtn {
-        font-size: 40px !important;
-        top: 15px;
-        right: 35px;
-    }
-}
+
+
+
+
+
+
+// .c-hamburger {
+//   display: block;
+//   position: fixed;
+//   overflow: hidden;
+//   margin: 0;
+//   padding: 0;
+//   width: 72px;
+//   height: 72px;
+//   right: 2%;
+//   top: 4%;
+//   font-size: 0;
+//   text-indent: -9999px;
+//   appearance: none;
+//   box-shadow: none;
+//   border-radius: none;
+//   border: none;
+//   cursor: pointer;
+//   transition: background 0.3s;
+// }
+
+// .c-hamburger:focus {
+//   outline: none;
+// }
+// .c-hamburger span {
+//   display: block;
+//   position: absolute;
+//   top: 30px;
+//   left: 12px;
+//   right: 12px;
+//   height: 6px;
+//   background: $yellow;
+// }
+
+// .c-hamburger span::before,
+// .c-hamburger span::after {
+//   position: absolute;
+//   display: block;
+//   left: 0;
+//   width: 100%;
+//   height: 6px;
+//   background-color:$yellow;
+//   content: "";
+// }
+
+// .c-hamburger span::before {
+//   top: -20px;
+// }
+
+// .c-hamburger span::after {
+//   bottom: -20px;
+// }
+
+// .c-hamburger--rot {
+//   background-color: $overlay;
+// }
+
+// .c-hamburger--rot span {
+//   transition: transform 0.3s;
+// }
+
+// /* active state, i.e. menu open */
+// .c-hamburger--rot.is-active {
+//   background-color: $blueD;
+// }
+
+// .c-hamburger--rot.is-active span {
+//   transform: rotate(90deg);
+// }
+// /* The Overlay (background) */
+
+// .overlay {
+//     /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+//    display:none; 
+//     height: 20%;
+//     width: 20%;
+//     position: fixed; /* Stay in place */
+//     z-index: 1; /* Sit on top */
+//     right: 2%;
+//     top: 15%;
+//     background-color: rgb(0,0,0); /* Black fallback color */
+//     background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+//     overflow: hidden; /* Disable horizontal scroll */
+//      0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal)
+// }
+
+// /* Position the content inside the overlay */
+// .overlay-content {
+//     position: relative;
+//     top: 10%; /* 25% from the top */
+//     width: 100%; /* 100% width */
+//     text-align: center; /* Centered text/links */
+//     margin-top: 3%; /* 30px top margin to avoid conflict with the close button on smaller screens */
+// }
+
+// /* The navigation links inside the overlay */
+// .overlay a {
+//     padding: 3%;
+//     text-decoration: none;
+//     color: $yellow;
+//     display: block; /* Display block instead of inline */
+//      /* Transition effects on hover (color) */
+// }
+
+// /* When you mouse over the navigation links, change their color */
+// .overlay a:hover, .overlay a:focus {
+//     color: #f1f1f1;
+// }
+
+
+
+// /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+// @media screen and (max-height: 450px) {
+//     .overlay a {font-size: 20px}
+   
+// }
+
+// body {height:3000px;}
+
+
+
+
+// ///Arrow
+// a.up-arrow {
+//   display: inline-block;
+//   position: relative;
+//   background: green;
+//   color: #FFF;
+//   text-decoration: none;
+//   padding: 20px;
+// }
+// a:hover.up-arrow {
+//   background: brown;
+// }
+// a.up-arrow:after {
+//   content: '';
+//   display: block;  
+//   position: absolute;
+//   left: 20px;
+//   bottom: 100%;
+//   width: 0;
+//   height: 0;
+//   border-bottom: 10px solid green;
+//   border-top: 10px solid transparent;
+//   border-left: 10px solid transparent;
+//   border-right: 10px solid transparent;
+// }
+// a:hover.up-arrow:after {
+//   border-bottom-color: brown;
+// }
+
+
+
+
+
 
 .c-hamburger {
   display: block;
-  position: relative;
+  position: absolute;
   overflow: hidden;
+  z-index:3;
   margin: 0;
   padding: 0;
-  width: 96px;
-  height: 96px;
+  width: 56px;
+  height: 56px;
+  right: 0;
+  top: 0;
   font-size: 0;
   text-indent: -9999px;
   appearance: none;
@@ -82,11 +239,11 @@
 .c-hamburger span {
   display: block;
   position: absolute;
-  top: 44px;
-  left: 18px;
-  right: 18px;
-  height: 8px;
-  background: white;
+  top: 22px;
+  left: 9px;
+  right: 9px;
+  height: 4px;
+  background: $yellow;
 }
 
 .c-hamburger span::before,
@@ -95,21 +252,21 @@
   display: block;
   left: 0;
   width: 100%;
-  height: 8px;
-  background-color: #fff;
+  height: 4px;
+  background-color:$yellow;
   content: "";
 }
 
 .c-hamburger span::before {
-  top: -20px;
+  top: -14px;
 }
 
 .c-hamburger span::after {
-  bottom: -20px;
+  bottom: -14px;
 }
 
 .c-hamburger--rot {
-  background-color: #28aadc;
+  background-color: $overlay;
 }
 
 .c-hamburger--rot span {
@@ -118,9 +275,109 @@
 
 /* active state, i.e. menu open */
 .c-hamburger--rot.is-active {
-  background-color: #166888;
+  background-color: $blueD;
 }
 
 .c-hamburger--rot.is-active span {
   transform: rotate(90deg);
+}
+/* The Overlay (background) */
+
+
+
+.layover {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+   display:none; 
+    // height: 20%;
+    // width: 20%;
+    position: absolute; /* Stay in place */
+    z-index: 3; /* Sit on top */
+    right: 0;
+    bottom: 0;
+    padding:4px 4px 3px 4px;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow: hidden; /* Disable horizontal scroll */
+    
+     /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.layover-content {
+    position: relative;
+    top: 10%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    // text-align: center; /* Centered text/links */
+    text-transform: uppercase;
+      font-weight:bold;
+    // margin-top: 3%; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.layover a {
+    // padding: 3%;
+    text-decoration: none;
+    // color: $yellow;
+    // display: block; /* Display block instead of inline */
+     /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.layover a:hover, .layover a:focus {
+    color: #f1f1f1;
+}
+
+
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .layover a {font-size: 20px}
+   
+}
+
+.navLst {
+list-style:none;
+padding: 0;
+width:292px;
+margin-bottom:0px;
+margin-top:0px;
+li{
+  background-color:  $greyLT;
+  border-bottom: 1px dashed Black;
+  margin-bottom: 1px;
+  padding:0;
+}
+h5 {
+  display:inline-block;
+}
+}
+
+
+.overHead {
+  text-transform: uppercase;
+  color:$yellow;
+  line-height: 1.7;
+  border-left:7px solid $yellow;
+  margin:15% 0 8% 0;
+  padding: 2% 0 2% 4%;
+  font-weight:bold;
+}
+.overHeadSpan{
+  text-transform: uppercase;
+  color:$yellow;
+  line-height: 2;
+  margin: 0 3px 0 0;
+  font-weight:bold;
+  vertical-align: bottom;
+}
+
+
+.transCon {
+  position:fixed;
+  width:300px;
+  height: 225px;
+  background-color:$yellow;
+  float:right;
+  top:5%;
+  right:5%;
 }
