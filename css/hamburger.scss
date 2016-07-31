@@ -173,7 +173,7 @@ h5 {
   display:inline-block;
 }
 }
-.overHead {
+.overHeadMenu {
   text-transform: uppercase;
   color:$yellow;
   line-height: 1.7;
@@ -196,6 +196,7 @@ h5 {
   position:fixed;
   width:382px;
   height: 244px;
+  z-index: 3;
   background-color:transparent;
   float:right;
   top:5%;
@@ -451,7 +452,7 @@ h5 {
   display:inline-block;
 }
 }
-.overHead {
+.overHeadMenu {
   text-transform: uppercase;
   color:$yellow;
   line-height: 1.7;
@@ -474,6 +475,7 @@ h5 {
   position:fixed;
   width:300px;
   height: 221px;
+  z-index: 3;
   background-color:transparent;
   float:right;
   top:5%;
